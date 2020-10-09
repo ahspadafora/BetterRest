@@ -24,25 +24,31 @@ struct ContentView: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+    var recommendedBedtime: String {
+        return calculateBedTime()
+    }
     
-    func calculateBedTime(){
+    func calculateBedTime() -> String {
         let model = SleepCalculator()
         let components = Calendar.current.dateComponents([.hour, .minute], from: wakeup)
         let hour = (components.hour ?? 0) * 60 * 60
         let minute = (components.minute ?? 0) * 60
+        
         do {
             let prediction = try model.prediction(wake: Double(hour + minute), estimatedSleep: sleepAmount, coffee: Double(coffeeAmount))
             let sleepTime = wakeup - prediction.actualSleep
             let formatter = DateFormatter()
             formatter.timeStyle = .short
-            alertMessage = formatter.string(from: sleepTime)
-            alertTitle = "Your ideal bedtime is..."
+            return formatter.string(from: sleepTime)
+//            alertMessage = formatter.string(from: sleepTime)
+//            alertTitle = "Your ideal bedtime is..."
         }
         catch {
             alertTitle = "Error"
             alertMessage = "Sorry, there was a problem calculating your bedtime."
+            showingAlert = true
         }
-        showingAlert = true
+        return ""
     }
     
     var body: some View {
@@ -76,12 +82,12 @@ struct ContentView: View {
                     }
                     
                 }
+                    
+                VStack {
+                    Text("The recommended bedtime is : \(recommendedBedtime)")
+                }
                 
             .navigationBarTitle("BetterRest")
-            .navigationBarItems(trailing:
-                Button(action: calculateBedTime) {
-                    Text("Calculate")
-                })
             }.alert(isPresented: $showingAlert) { () -> Alert in
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
