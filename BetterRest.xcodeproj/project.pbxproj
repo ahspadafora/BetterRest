@@ -13,6 +13,7 @@
 		BA482C1A2530D38C006E1C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA482C192530D38C006E1C62 /* Assets.xcassets */; };
 		BA482C1D2530D38C006E1C62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA482C1C2530D38C006E1C62 /* Preview Assets.xcassets */; };
 		BA482C202530D38C006E1C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA482C1E2530D38C006E1C62 /* LaunchScreen.storyboard */; };
+		BA482C282530F195006E1C62 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BA482C272530F194006E1C62 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BA482C1C2530D38C006E1C62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA482C1F2530D38C006E1C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA482C212530D38C006E1C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA482C272530F194006E1C62 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				BA482C192530D38C006E1C62 /* Assets.xcassets */,
 				BA482C1E2530D38C006E1C62 /* LaunchScreen.storyboard */,
 				BA482C212530D38C006E1C62 /* Info.plist */,
+				BA482C272530F194006E1C62 /* SleepCalculator.mlmodel */,
 				BA482C1B2530D38C006E1C62 /* Preview Content */,
 			);
 			path = BetterRest;
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA482C142530D388006E1C62 /* AppDelegate.swift in Sources */,
+				BA482C282530F195006E1C62 /* SleepCalculator.mlmodel in Sources */,
 				BA482C162530D388006E1C62 /* SceneDelegate.swift in Sources */,
 				BA482C182530D388006E1C62 /* ContentView.swift in Sources */,
 			);
