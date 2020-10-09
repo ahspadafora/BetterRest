@@ -63,14 +63,18 @@ struct ContentView: View {
                 }
                 
                 VStack(alignment:.leading, spacing: 0) {
-                    Text("Amount of coffee cups drank")
-                    Stepper(value: $coffeeAmount, in: 1...20) {
-                        if coffeeAmount == 1 {
-                            Text("1 cup")
-                        } else {
-                            Text("\(coffeeAmount) cups")
+                    Text("Amount of coffee cups drank").font(.headline)
+                    
+                    Picker(selection: $coffeeAmount, label: Text("Choose a number of coffees")) {
+                        ForEach(1..<20) { coffeeAmount in
+                            if coffeeAmount == 1 {
+                                Text("1 cup")
+                            } else {
+                                Text("\(coffeeAmount) cups")
+                            }
                         }
                     }
+                    
                 }
                 
             .navigationBarTitle("BetterRest")
